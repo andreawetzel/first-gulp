@@ -9,7 +9,7 @@ var gulp = require('gulp'),
 
 
 gulp.task("concatScripts", function(){
-  gulp.src([
+  return gulp.src([
     'js/one.js',
     'js/two.js'])
     .pipe(maps.init())
@@ -18,22 +18,21 @@ gulp.task("concatScripts", function(){
     .pipe(gulp.dest('js'));
 });
 
-gulp.task("minifyScripts", function(){
-  gulp.src("js/app.js")
+gulp.task("minifyScripts", ['concatScripts'], function(){
+  return gulp.src("js/app.js")
     .pipe(uglify())
     .pipe(rename('app.min.js'))
     .pipe(gulp.dest('js'));
 });
 
 gulp.task("compileSass", function(){
-  gulp.src("css/main.scss")
+  return gulp.src("css/main.scss")
   .pipe(maps.init())
   .pipe(sass({ outputStyle: 'compressed' }))
   .pipe(maps.write('./'))
   .pipe(gulp.dest('css'));
 });
 
-//second parameter is an array of dependencies
-gulp.task("default", ["hello"], function(){
-  console.log("This is the default task");
-});
+gulp.task("build", ['minifyScripts', 'compileSass'])
+
+gulp.task("default", ["build"]);
