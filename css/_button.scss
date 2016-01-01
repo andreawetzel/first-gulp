@@ -1,0 +1,47 @@
+//Buttons
+//--------------------------------------------------
+
+.btn {
+    background: $color-dark-grey;
+    color: $color-light-link;
+    padding: .5em 1em;
+    border: solid darken($color-dark-grey, 10%);
+    border-width: 1px 1px 3px 1px;
+    border-radius: 3px;
+    font-size: .9em;
+    font-family: $font-serif;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    -moz-box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+    -webkit-box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+    box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+    white-space: normal;
+    display: inline-block;
+    margin-bottom: 1em;
+    text-decoration: none;
+}
+
+.btn:hover, .btn:active, .btn:focus {
+    background-color: lighten($color-dark-grey, 10%);
+    color: $color-light-link;
+    border: solid $color-dark-grey;
+    border-width: 1px 1px 3px 1px;
+}
+.btn:hover, .btn:focus {
+    transform: translateY(-2px);
+}
+.btn:active {
+    transform: translateY(2px);
+}
+
+.btn-primary{
+    background: $color-primary;
+    border: solid darken($color-primary, 10%);
+    border-width: 1px 1px 3px 1px;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+    background-color: lighten($color-primary, 10%);
+    border: solid $color-primary;
+    border-width: 1px 1px 3px 1px;
+}

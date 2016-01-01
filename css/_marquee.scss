@@ -1,0 +1,31 @@
+.marquee {
+    text-align: center;
+    @media($media-large){
+        background-color: rgba(0,0,0,.5);
+        height: 400px;
+    }
+}
+
+.marquee h2, .marquee h1 {
+    color: $color-white;
+    margin-bottom: 0;
+    padding: 1em;
+    font-weight: 400;
+    font-size: 1.8em;
+    font-style: italic;
+    @media($media-large){
+        font-style: normal;
+        font-size: 3.5em;
+        font-family: $font-hand;
+        padding: 40px 20%;
+        font-weight: 400;
+
+    }
+}
+.marquee-home h2 {
+    @media($media-large){
+        height: 260px;
+        background-color: rgba(0,0,0,.2);
+        padding-top: 100px;
+    }
+}

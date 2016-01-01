@@ -1,0 +1,44 @@
+.wrc-container-footer {
+    background-color: rgba(255,255,255,0);
+    padding-top: 0;
+}
+.wrc-footer {
+    text-align: center;
+    font-size: .9em;
+    background-color: $color-primary;
+    color: $color-white;
+}
+.wrc-footer a {
+    color: $color-white;
+    text-decoration: underline;
+    border-bottom: 0;
+}
+.wrc-footer a:hover {
+    text-decoration: none;
+    color: $color-light-grey;
+}
+.wrc-footer p {
+    margin-bottom: 1em;
+}
+footer nav {
+    //border-bottom: 1px solid #FFF;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-top: 0;
+}
+footer nav a {
+    color: $color-white;
+    font-weight: 400;
+}
+footer nav a:hover {
+    color: $color-light-grey;
+}
+footer .col {
+    margin-top: 0;
+}
+footer svg {
+    width: 150px;
+}
+.wrcs-logo-white {
+    fill:#FFFFFF;
+}

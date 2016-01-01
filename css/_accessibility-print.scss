@@ -1,0 +1,72 @@
+//Screen Reader Support Text Styles
+//--------------------------------------------------
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+.screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 1.4rem;
+	font-weight: 700;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+}
+
+//Print Styles
+//--------------------------------------------------
+@media print {
+	* {
+		background: transparent !important;
+		color: #000 !important;
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
+	a, a:visited {
+		text-decoration: underline;
+		border-bottom: none;
+	}
+	.blog-post-single a[href]:after {
+        content: " (" attr(href) ")";
+    }
+	abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+	.ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+        content: "";
+    }
+	pre, blockquote {
+		border: 1px solid #999;
+		page-break-inside: avoid;
+	}
+	thead { display: table-header-group; }
+	tr, img { page-break-inside: avoid; }
+	img { max-width: 100% !important; }
+	@page { margin: 0.5cm; }
+	p, h2, h3 {
+		orphans: 3;
+		widows: 3;
+	}
+	h2, h3 { page-break-after: avoid; }
+	.footNav, .footEmail, .footsocial, nav ul, nav .getInvolved, .slicknav_menu, .footSocial, .footLogo, .socialLinks { display: none; }
+
+	//Now, remove pieces that won't print well below this line.
+
+
+	//End print styles
+
+}

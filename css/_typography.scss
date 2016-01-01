@@ -1,0 +1,177 @@
+// Typography  Base
+//--------------------------------------------------
+
+
+b, strong {
+    font-weight:700;
+}
+dfn, cite, em, i {
+    font-style:italic;
+}
+blockquote {
+ margin:0 1.5em;
+}
+
+sup, sub {
+    font-size:75%;
+    height:0;
+    line-height:0;
+    position:relative; 
+    vertical-align:baseline;
+}
+small {
+    font-size:75%;
+}
+big {
+    font-size:125%;
+}
+
+html {
+
+}
+
+body {
+    color: $color-base-text;
+    font-family: $font-serif;
+    font-size: $base-font-size-mobile;
+    line-height: $base-line-height;
+    @media ($media-small) {
+        font-size: $base-font-size;
+    }
+}
+
+p {
+    margin: 0 auto $base-margin-bottom;
+}
+
+em {
+    font-style: italic;
+}
+
+ul{
+    margin-bottom: 1.75em;
+}
+
+hr {
+    clear:both;
+    background-color:#ccc;
+    border:0;
+    height:1px;
+    margin-bottom:1.5em;
+}
+
+ul, ol {
+    margin:0 0 1.5em 1.5em;
+}
+li {
+    margin-bottom: .5em;
+}
+
+ul {
+    list-style:disc;
+}
+
+ol {
+    list-style:decimal;
+}
+
+li > ul, li > ol {
+    margin-bottom:0;
+    margin-left: 1em;
+}
+
+dt {
+    font-weight:700;
+}
+
+dd {
+    margin:0 1.5em 1.5em;
+}
+
+img {
+    height:auto;
+    max-width:100%;
+}
+
+figure {
+    margin:0;
+}
+
+embed,
+iframe,
+object {
+    max-width:100%;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 900;
+    margin-bottom: $base-margin-bottom * .5;
+    line-height: $base-line-height * .8;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover {
+    text-decoration: none;
+    color: $color-primary;
+}
+
+h1 {
+    font-size: $h1-size;
+}
+
+h2 {
+    font-size: $h2-size;
+}
+h3 {
+    font-size: $h3-size;
+}
+h4 {
+    font-size: $h4-size;
+}
+
+h5 {
+    font-size: $h5-size;
+}
+
+a {
+    color: $color-link;
+    //transition: .5s;
+    text-decoration: none;
+    border-bottom: 1px solid $color-link;
+    &:hover, &:focus, &:active {
+        color: $color-link-hover;
+        border-bottom: 0px solid $color-white;
+        //background-color: $color-link-bg;
+        //text-decoration: none;
+    }
+}
+
+blockquote {
+    padding:.5em;
+    margin:1em;
+    border:.06em solid rgba(0,0,0,.1);
+    box-shadow:inset 0 0 .12em rgba(0,0,0,.1);
+    font-style:italic;
+    background-color: $color-light-grey;
+}
+blockquote p {
+    margin-bottom:1.25em;
+}
+cite {
+    font-size:.8em;
+    font-style:italic;
+    margin-top:0.25em;
+    display:block;
+}
+
+
+hr {
+    border:0;
+    height:0;
+    border-top:1px solid rgb(30, 30, 30);
+    border-top:1px solid rgba(0, 0, 0, 0.4);
+    border-bottom:1px solid rgba(0, 0, 0, 0.2);
+}
+.caption {
+    font-style: italic;
+    font-size: .9em;
+}

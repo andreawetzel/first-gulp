@@ -1,0 +1,101 @@
+//Base Variables
+//--------------------------------------------------
+$base-font-size: 1.2em;
+$base-font-size-mobile: 1.2em;
+$base-line-height: 1.5em;
+$base-margin-bottom: 1em;
+
+//Color Variables
+//--------------------------------------------------
+$color-white: #FFF;
+$color-black: #191919;
+$color-dark-grey: #444;
+$color-light-grey: #ccc;
+$color-primary: #36A1C6;
+$color-secondary: #93C6D6;
+$color-base-text: $color-black;
+$color-accent: #FFBC00;
+$color-accent-lt: #FFDB08;
+$color-bg: #DEE5E5;
+
+$color-highlight: $color-light-grey;
+$color-link: $color-primary;
+$color-link-hover: darken($color-primary, 20%);
+$color-light-link: $color-white;
+$color-link-bg: $color-highlight;
+
+//Media Queries
+//--------------------------------------------------
+$media-small: 'min-width: 560px';
+$media-medium: 'min-width: 700px';
+$media-large: 'min-width: 980px';
+$media-large-container: 1080px;
+
+
+
+//Font Variables
+//--------------------------------------------------
+$font-sans: Impact, Charcoal, sans-serif;
+$font-hand: 'Playball', cursive, serif;
+$font-serif: 'Gentium Basic', Georgia,  serif;
+$h1-size: 1.8em;
+$h2-size: 1.6em;
+$h3-size: 1.4em;
+$h4-size: $base-font-size;
+$h5-size: $h4-size;
+
+
+//Mixin: Background colors for classes with color variable names
+//--------------------------------------------------
+@mixin bg_color($color-name, $color) {
+.#{$color-name }{ background: $color;
+    @if (lightness($color) < 60)
+        { color: $color-light-link;} @else {
+            color: $color-base-text;}
+    }
+}
+
+@mixin btn_color ($btn-name, $color) {
+.#{$btn-name }{ background: $color;
+    border: solid darken($color, 10%);
+    border-width: 1px 1px 3px 1px;
+    border-width: 1px 1px 3px 1px;
+
+    @if (lightness($color) > 60)
+        { color: $color-base-text;} @else {
+            color: $color-light-link;}
+    }
+}
+
+//Misc Styles
+img {
+    max-width: 100%;
+    height: auto;
+}
+.full-300 {
+    width: 100%;
+    height: auto;
+    //max-width: 300px;
+}
+.desktop-only {
+    display: none;
+    @media($media-large){
+        display: inline;
+    }
+}
+.staff-img img {
+    max-width: 300px;
+}
+//Imports
+//--------------------------------------------------
+
+@import "_reset.scss";
+@import "_typography.scss";
+@import "_button.scss";
+@import "_table.scss";
+@import "_layout.scss";
+@import "_nav2.scss";
+@import "_footer.scss";
+@import "_marquee.scss";
+
+@import "_accessibility-print.scss" //This should be last
