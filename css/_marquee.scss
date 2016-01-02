@@ -1,7 +1,7 @@
 .marquee {
     text-align: center;
+    background-color: rgba(0,0,0,.5);
     @media($media-large){
-        background-color: rgba(0,0,0,.5);
         height: 400px;
     }
 }
@@ -19,7 +19,6 @@
         font-family: $font-hand;
         padding: 40px 20%;
         font-weight: 400;
-
     }
 }
 .marquee-home h2 {
