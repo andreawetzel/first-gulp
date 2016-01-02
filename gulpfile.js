@@ -5,7 +5,8 @@ var gulp = require('gulp'),
   uglify = require('gulp-uglify'),
   rename = require('gulp-rename'),
   sass = require('gulp-sass'),
-  maps = require('gulp-sourcemaps');
+  maps = require('gulp-sourcemaps'),
+  del = require('del');
 
 
 gulp.task("concatScripts", function(){
@@ -33,10 +34,22 @@ gulp.task("compileSass", function(){
   .pipe(gulp.dest('css'));
 });
 
-gulp.task('watchSass', function(){
+gulp.task('watchFiles', function(){
   gulp.watch('css/**/*.scss', ['compileSass']);
+  gulp.watch('js/two.js', ['concatScripts']);
 });
 
-gulp.task("build", ['minifyScripts', 'compileSass'])
+gulp.task('clean', function(){
+  del(['dist', 'css/main.css', 'css/main.css.map','js/app.js', 'js/app*.js*']);
+});
 
-gulp.task("default", ["build"]);
+gulp.task("build", ['minifyScripts', 'compileSass'], function(){
+  return gulp.src(['css/main.css', 'js/app.js', 'index.html', "img/**"], { base: './'})
+  .pipe(gulp.dest('dist'));
+});
+
+gulp.task('serve', ['watchFiles']);
+
+gulp.task("default", ["clean"], function(){
+  gulp.start('build'); //this will change in gulp 4
+});
